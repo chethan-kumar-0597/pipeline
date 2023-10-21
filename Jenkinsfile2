@@ -10,7 +10,7 @@ pipeline {
 sh ''' 
 sleep 5
 echo $NAME
-exit 0
+exit 1
   '''
       }  
     }  
