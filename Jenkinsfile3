@@ -8,7 +8,6 @@ pipeline {
         echo "This is Test on Chrome Browser" 
 	      sh 'sleep 10;exit 0'
       }
-	stage ('Test') { 
 	parallel {
 	stage ("Test 01") {
       steps {
@@ -28,8 +27,7 @@ pipeline {
 	      sh 'sleep 10'
       }  
     }
-  }
-} 
+  } 
 }
         stage ("TEST ON SAFARI") {
       steps {
