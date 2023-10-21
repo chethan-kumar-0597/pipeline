@@ -1,6 +1,6 @@
 pipeline {
   agent any	
-	environmental {
+	environment {
 		NAME = 'CHETHAN'
 		}
   stages {
