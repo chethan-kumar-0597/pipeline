@@ -15,27 +15,6 @@ pipeline {
 	      sh 'sleep 10;exit 0'
       }  
     }
-      parallel {
-	stage ("Test 01") {
-      steps {
-        echo "This is Deploy to Test 01" 
-	      sh 'sleep 10'
-      }  
-    }
-	stage ("Test 02") {
-      steps {
-        echo "This is Deploy to Test 02" 
-	      sh 'sleep 5'
-      }  
-    }
-	stage ("Test 03") {
-      steps {
-        echo "This is Deploy to Test 03" 
-	      sh 'sleep 5'
-      }  
-    }
-  }
-    
 }
       }
     }
