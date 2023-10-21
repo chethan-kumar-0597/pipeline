@@ -2,38 +2,38 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
-            steps {
-                       echo "This is Test on Build" 
-	                      sh 'sleep 5;exit 0'
-            }
-        }
-
-        stage('Test') {
+        stage('Build and Test') {
             parallel {
-                stage('Test Case 1') {
+                stage('Build') {
                     steps {
-                        script {
-                            echo "This is Deploy to Test 01" 
-	                                sh 'sleep 10'                
-}
+                        echo 'Building the project...'
+                        // Add build commands here
                     }
                 }
-                stage('Test Case 2') {
-                    steps {
-                        script {
-                            echo "This is Deploy to Test 01" 
-	                                sh 'sleep 10'
+
+                stage('Test') {
+                    parallel {
+                        stage('Unit Tests') {
+                            steps {
+                                echo 'Running unit tests...'
+                                // Add commands to run unit tests
+                            }
+                        }
+                        stage('Integration Tests') {
+                            steps {
+                                echo 'Running integration tests...'
+                                // Add commands to run integration tests
+                            }
                         }
                     }
                 }
-
             }
         }
 
         stage('Deploy') {
-            steps {echo "This is Test on Build" 
-	            sh 'sleep 5;exit 0'
+            steps {
+                echo 'Deploying the application...'
+                // Add deployment commands here
             }
         }
     }
