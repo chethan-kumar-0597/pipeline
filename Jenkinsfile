@@ -12,7 +12,7 @@ pipeline {
     }  
     
     stage ('TEST PARALLELE') {
-      parallel
+      parallel {
       stage ("TEST ON CHROME") {
       steps {
         echo "This is Test on Chrome Browser" 
@@ -24,6 +24,7 @@ pipeline {
         echo "This is Test on SAFARI Browser" 
 	      sh 'sleep 5;exit 1'
       }  
+    }
     }
     stage ('DEPLOY') {
       steps {
