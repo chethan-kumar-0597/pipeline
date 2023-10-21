@@ -1,22 +1,35 @@
 pipeline {
-  agent any	
-  stages {
-	  stage ('BUILD') {
-      steps {
-        echo "This is Build stage" 
-      }  
-    }  
-    
-    stage ('TEST') {
-      steps {
-        echo "This is Test stage" 
-      }  
-    }  
-    
-    stage ('DEPLOY') {
-      steps {
-        echo "This is Deploy stage" 
-      }  
-    }  
-  } 
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'This is Build'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'This is Deploy'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'This is Test'
+            }
+        }
+
+        stage('Release') {
+            steps {
+                echo 'This is Release'
+            }
+        }
+    }
 }
