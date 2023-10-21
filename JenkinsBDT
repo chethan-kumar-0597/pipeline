@@ -2,13 +2,36 @@ pipeline {
     agent any
 
     stages {
-        stage('Add Numbers') {
+        stage('BUILD Add Numbers') {
             steps {
                 script {
                     def num1 = 5
                     def num2 = 7
                     def sum = num1 + num2
                     echo "The sum of $num1 and $num2 is $sum"
+            sh 'sleep 10;exit 1'
+                }
+            }
+        }
+        stage('DEPLOY Add Numbers') {
+            steps {
+                script {
+                    def num1 = 75
+                    def num2 = 5
+                    def sum = num1 - num2
+                    echo "The sum of $num1 and $num2 is $sum"
+            sh 'sleep 10;exit 1'
+                }
+            }
+        }
+        stage('TEST Add Numbers') {
+            steps {
+                script {
+                    def num1 = 5
+                    def num2 = 5
+                    def sum = num1 + num2
+                    echo "The sum of $num1 and $num2 is $sum"
+            sh 'sleep 10;exit 1'
                 }
             }
         }
