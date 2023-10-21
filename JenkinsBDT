@@ -6,31 +6,31 @@ pipeline {
             steps {
                 script {
                     def num1 = 5
-                    def num2 = 7
+                    def num2 = 5
                     def sum = num1 + num2
                     echo "The sum of $num1 and $num2 is $sum"
             sh 'sleep 10;exit 0'
                 }
             }
         }
-        stage('DEPLOY Add Numbers') {
+        stage('DEPLOY Subtract Numbers') {
             steps {
                 script {
                     def num1 = 75
                     def num2 = 5
                     def sum = num1 - num2
-                    echo "The sum of $num1 and $num2 is $sum"
+                    echo "The Subtract of $num1 and $num2 is $sum"
             sh 'sleep 10;exit 0'
                 }
             }
         }
-        stage('TEST Add Numbers') {
+        stage('TEST Multiply Numbers') {
             steps {
                 script {
                     def num1 = 5
                     def num2 = 5
-                    def sum = num1 + num2
-                    echo "The sum of $num1 and $num2 is $sum"
+                    def sum = num1 * num2
+                    echo "The Multiply of $num1 and $num2 is $sum"
             sh 'sleep 10;exit 0'
                 }
             }
