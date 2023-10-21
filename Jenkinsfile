@@ -5,8 +5,8 @@ pipeline {
       steps {
         echo "This is Build stage" 
 	      sh '''
-       			sleep 5
-	  		exit 1
+       			sleep 10
+	  		exit 0
      		 '''
       }  
     }  
@@ -16,7 +16,7 @@ pipeline {
       stage ("TEST ON CHROME") {
       steps {
         echo "This is Test on Chrome Browser" 
-	      sh 'sleep 5;exit 1'
+	      sh 'sleep 5;exit 0'
       }  
     }  
         stage ("TEST ON SAFARI") {
