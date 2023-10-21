@@ -4,7 +4,9 @@ pipeline {
 	  stage ('BUILD') {
       parallel { 
       stage ("TEST ON CHROME") {
-      parallel {
+      stages {
+	stage ('Test') {
+	parallel {
 	stage ("Test 01") {
       steps {
         echo "This is Deploy to Test 01" 
@@ -14,16 +16,18 @@ pipeline {
 	stage ("Test 02") {
       steps {
         echo "This is Deploy to Test 02" 
-	      sh 'sleep 5'
+	      sh 'sleep 10'
       }  
     }
 	stage ("Test 03") {
       steps {
         echo "This is Deploy to Test 03" 
-	      sh 'sleep 5'
+	      sh 'sleep 10'
       }  
     }
   }
+}
+}
       steps {
         echo "This is Test on Chrome Browser" 
 	      sh 'sleep 10;exit 0'
@@ -38,7 +42,7 @@ pipeline {
         stage ("TEST ON Opera Mini") {
       steps {
         echo "This is Test on Opera Mini Browser" 
-	      sh 'sleep 5;exit 0'
+	      sh 'sleep 10;exit 0'
       }  
     }
 }
