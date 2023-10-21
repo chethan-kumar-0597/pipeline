@@ -1,0 +1,40 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                       echo "This is Test on Build" 
+	                      sh 'sleep 5;exit 0'
+            }
+        }
+
+        stage('Test') {
+            parallel {
+                stage('Test Case 1') {
+                    steps {
+                        script {
+                            echo "This is Deploy to Test 01" 
+	                                sh 'sleep 10'                
+}
+                    }
+                }
+                stage('Test Case 2') {
+                    steps {
+                        script {
+                            echo "This is Deploy to Test 01" 
+	                                sh 'sleep 10'
+                        }
+                    }
+                }
+
+            }
+        }
+
+        stage('Deploy') {
+            steps {echo "This is Test on Build" 
+	            sh 'sleep 5;exit 0'
+            }
+        }
+    }
+}
