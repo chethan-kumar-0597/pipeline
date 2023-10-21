@@ -15,6 +15,12 @@ pipeline {
 	      sh 'sleep 10;exit 0'
       }  
     }
+        stage ("TEST ON Opera Mini") {
+      steps {
+        echo "This is Test on Opera Mini Browser" 
+	      sh 'sleep 5;exit 0'
+      }  
+    }
 }
       }
     }
