@@ -30,6 +30,7 @@ pipeline {
     stage ('DEPLOY') {
       steps {
         echo "This is Deploy stage" 
+	      echo "This is to test"
 	      sh 'sleep 5'
       }  
     }
