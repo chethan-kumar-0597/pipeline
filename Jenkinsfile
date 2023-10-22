@@ -30,7 +30,7 @@ pipeline {
     stage ('DEPLOY') {
       steps {
         echo "This is Deploy stage" 
-	      echo "Mission Acomplished"
+	      echo "Mission"
 	      sh 'sleep 5'
       }  
     }
