@@ -22,7 +22,7 @@ pipeline {
         stage ("TEST ON SAFARI") {
       steps {
         echo "This is Test on SAFARI Browser" 
-	      sh 'sleep 5;exit 0'
+	      sh 'sleep 5;exit 1'
       }  
     }
     }
